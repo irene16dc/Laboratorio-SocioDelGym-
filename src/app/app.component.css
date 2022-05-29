@@ -1,0 +1,37 @@
+
+ h1{
+   text-align: center;
+   padding-top: 20px;
+   font-size: 40px;
+   color: #4CB2B6;
+ }
+ h2{
+   color: #5DB5B8;
+    font-size: 28px;
+  }
+.contenido{
+  width: 100%;
+  margin: 15px;
+}
+.contenido--formulario, .contenido--Listado{
+  float: left;
+  margin-top: 49px;
+}
+.contenido--formulario{width: 40%;}
+.contenido--Listado{
+  width: 60%;
+}
+
+
+mat-form-field{padding: 5px;}
+
+
+button, mat-form-field{
+  margin: 5px ;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+

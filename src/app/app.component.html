@@ -1,0 +1,68 @@
+
+
+<div class="contenido">
+ <h1> Socios del Gimnasio </h1>
+  <div class="contenido--formulario">
+    <h2>Registrar un nuevo Socio </h2>
+
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Socio </mat-label>
+        <input type="number" [(ngModel)]="SelectedSocio.socio" [ngModelOptions]="{standalone: true}" matInput  />
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre </mat-label>
+        <input type="text" [(ngModel)]="SelectedSocio.nombre" [ngModelOptions]="{standalone: true}" matInput minlength="3"  />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input type="text" [(ngModel)]="SelectedSocio.apellidos" [ngModelOptions]="{standalone: true}" matInput minlength="3" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Dni</mat-label>
+        <input matInput   [(ngModel)]="SelectedSocio.dni" [ngModelOptions]="{standalone: true}" placeholder="NIF (8 números y 1 letra)" pattern="^[0-9]{8,8}[A-Za-z]$" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Telefono </mat-label>
+        <input type="number" [(ngModel)]="SelectedSocio.telefono" matInput [ngModelOptions]="{standalone: true}" />
+      </mat-form-field>
+
+      <label>
+        <br />
+        Sexo: <br>
+      </label>
+      <mat-radio-group [(ngModel)]="SelectedSocio.sexo"  [ngModelOptions]="{standalone: true}">
+        <mat-radio-button value="Hombre"> Hombre</mat-radio-button>
+        <mat-radio-button value="Mujer">Mujer</mat-radio-button>
+
+      </mat-radio-group>
+
+      <button mat-raised-button color="primary" (click)="AddSocio()" >enviar</button>
+      </form>
+
+
+  </div>
+  <div class="contenido--Listado">
+    <h2>Listado de Socios</h2>
+
+
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let socio of SocioArray;let i = index">
+
+
+          Nº Socio : {{socio.socio}} , nombre: {{socio.nombre}},
+          Apellido : {{socio.apellidos}}, dni: {{socio.dni}},
+          Telefono: {{socio.telefono}}, Sexo {{socio.sexo}}
+
+        <button mat-raised-button color="primary" (click)="EditarSocio(socio)" >editar</button>
+        <button mat-raised-button color="warn" (click)=" delete(i)" > Borrar </button>
+        </mat-list-item >
+    </mat-list>
+
+
+
+  </div>
+</div>
